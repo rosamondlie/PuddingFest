@@ -193,29 +193,28 @@
             <form action="">
                 <div class="input-form">
                     <label>Name</label>
-                    <input type="text" placeholder="Joe Richmond">
+                    <input type="text" placeholder="Joe Richmond" id="name">
                 </div>
                 <div class="input-form">
                     <label>Email</label>
-                    <input type="email" placeholder="richmond@gmail.com">
+                    <input type="email" placeholder="richmond@gmail.com" id="email">
                 </div>
                 <div class="input-form">
                     <label>Telephone Number</label>
-                    <input type="text" placeholder="08xxxxxxxxxx">
+                    <input type="text" placeholder="08xxxxxxxxxx" id="telp_num">
                 </div>
                 <div class="input-form">
                     <label>Select Event</label>
-                    <select class="form-select" style="border-radius: 5rem; padding: 0.75rem 3rem 0.75rem 1.5rem;" aria-label="Default select example">
+                    <select class="form-select" id="event" style="border-radius: 5rem; padding: 0.75rem 3rem 0.75rem 1.5rem;" aria-label="Default select example">
                         <option selected>Open this select menu</option>
-                        <option value="1">Exhibition</option>
-                        <option value="2">Company Presentation</option>
-                        <option value="3">Networking</option>
+                        <option value="Exhibition">Exhibition</option>
+                        <option value="Presentation">Company Presentation</option>
+                        <option value="Networking">Networking</option>
                       </select>
                 </div>
                 <br>
-                <button class="send-button" type="submit">Send</button>
+                <button class="send-button" type="submit" id="getData" onclick="saveData()">Submit</button>
             </form>
-
         </div>
 
 
@@ -226,6 +225,9 @@
     
     
 </body>
+<script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 
