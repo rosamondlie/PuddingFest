@@ -51,5 +51,53 @@ const saveData = () => {
 
 // getData.addEventListener("click",()=>{
 //     let xhr =new XMLHttpRequest();
-//     xhr.open('GET',)
+//     xhr.open('POST','https://jsonplaceholder.typicode.com/posts', true)
+
+//     xhr.onprogress = function(){
+//         console.log("saya lagi proses");
+//     }
+
+//     xhr.onreadystatechange = function(){
+//         console.log("Ready state di" + xhr.readyState);
+//     }
+
+//     xhr.onload = function(){
+//         if(this.status === 200){
+//             console.log(this.responseText);
+//         }
+//         else{
+//             console.log("Page not found!");
+//         }
+//     }
+//     data = {title:"Ajax"};
+//     xhr.send(data);
 // })
+
+
+$(document).ready(function(){
+    $('#addData').click(function(){
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var telp_num = $('#telp_num').val();
+        var event = $('#event').val();
+
+        if(name && email && telp_num && event){
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/posts',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({userId: name, id: email, title: telp_num, body: event}),
+                success: function(response){
+                    console.log("Data berhasil ditambahkan ke API!");
+                },
+                error: function(xhr, status, eror){
+                    console.log(error);
+                }
+            })
+        }
+        else{
+            alert('Tolong isi yang lengkap!');
+        }
+    })
+})
+
